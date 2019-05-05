@@ -1,0 +1,279 @@
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  transition: all 0.28s ease-in-out;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  line-height: normal;
+  color: inherit;
+}
+
+.wrapper-blackout {
+  position: relative;
+  z-index: 1;
+}
+.wrapper-blackout::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: -1;
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.wrapper-background_filing {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    word-wrap: break-word;
+  } */
+
+.header {
+  padding: 30px 0;
+  display: block;
+  text-align: center;
+  color: white;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    max-width: 90%;
+  }
+}
+
+.logo {
+  margin: 30px 0 0 0;
+  padding: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  float: left;
+  color: white;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.clear {
+  display: block;
+}
+.clear::before,
+.clear::after {
+  display: table;
+  content: "";
+}
+.clear,
+.clear::after {
+  clear: both;
+}
+
+/*
+  header__navigation
+  navigation__item-list
+  navigation__item
+  navagation__sub-item-list
+  navagation__sub-item
+  */
+
+.header__navigation {
+  float: right;
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
+
+.header__navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation__item {
+  display: inline-block;
+  position: relative;
+
+  padding-right: 30px;
+}
+
+.navagation__sub-item-list {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  top: 30px;
+  background-color: black;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.navigation__item:hover .navagation__sub-item-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navagation__sub-item {
+  display: block;
+}
+
+.navigation__link {
+  display: block;
+  margin: 0;
+  padding: 10px 15px;
+}
+
+/*  MainSlider */
+
+.main-slider {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 90vw;
+  margin: auto;
+}
+
+.main-slider__item {
+  position: absolute;
+  z-index: 0;
+  min-width: 600px;
+  width: 100%;
+  height: 45vw;
+  vertical-align: middle;
+}
+
+.main-slider__btn {
+  position: absolute;
+  top: 0;
+  padding: 0;
+  height: 100%;
+  width: 10%;
+  border: 0;
+  vertical-align: middle;
+  writing-mode: horizontal-tb;
+  background-color: rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+  color: white;
+  font-size: 3rem;
+}
+
+.main-slider__btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-slider__btn:focus {
+  outline: none;
+}
+
+
+.btn_prev {
+  left: 0;
+}
+
+.btn_next {
+  right: 0;
+}
+
+.main-slider__infoblock {
+  position: absolute;
+  top:100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  
+  width: 80%;
+  writing-mode: horizontal-tb;
+  background-color: rgba(0, 0, 0, 0.7);
+  vertical-align: middle;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.main-slider__item:hover ~ .main-slider__infoblock,
+.main-slider__infoblock:hover{
+  top: auto;
+  bottom: 0;
+  animation-iteration-count: 1;
+  animation-duration:  0.5s;
+  animation-name: appearance_below;
+}
+
+
+@keyframes appearance_below {
+  0% {
+    transform: translate(0, 200px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+.infoblock_header{
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.infoblock_separator1{
+  width: 70%;
+  size: 1rem;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 5px;
+}
+.infoblock_separator2{
+  width: 50%;
+  size: 1rem;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 5px;
+}
+
+.infoblock_body{
+  text-indent: 30px;
+  text-align: justify;
+  margin: 0 10%;
+}
+
+.infoblock_link-div{
+  display: block;
+  padding: 0 10% 1%;
+  text-align: center;
+}
+
+.infoblock_link{
+  border: 2px outset white  
+}
+
+.infoblock_link:hover{
+  color: black;
+  background-color: white;
+}
