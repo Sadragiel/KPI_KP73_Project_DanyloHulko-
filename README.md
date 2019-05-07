@@ -1,2 +1,2 @@
-# React-Router-Redux-App
-This is simple React-Router-Redux App for the [tutorial article](https://medium.com/@lavitr01051977/react-router-redux-app-with-call-to-api-70a324c34ecb)
+# Project for Epam
+To start project, do `npm i` and then `npm run dev`
