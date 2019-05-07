@@ -191,7 +191,6 @@ h1 {
   outline: none;
 }
 
-
 .btn_prev {
   left: 0;
 }
@@ -202,13 +201,13 @@ h1 {
 
 .main-slider__infoblock {
   position: absolute;
-  top:100%;
+  top: 100%;
   left: 0;
   right: 0;
   margin: auto;
   padding: 0;
   border: 0;
-  
+
   width: 80%;
   writing-mode: horizontal-tb;
   background-color: rgba(0, 0, 0, 0.7);
@@ -218,14 +217,13 @@ h1 {
 }
 
 .main-slider__item:hover ~ .main-slider__infoblock,
-.main-slider__infoblock:hover{
+.main-slider__infoblock:hover {
   top: auto;
   bottom: 0;
   animation-iteration-count: 1;
-  animation-duration:  0.5s;
+  animation-duration: 0.5s;
   animation-name: appearance_below;
 }
-
 
 @keyframes appearance_below {
   0% {
@@ -236,20 +234,20 @@ h1 {
   }
 }
 
-.infoblock_header{
+.infoblock_header {
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 0;
 }
 
-.infoblock_separator1{
+.infoblock_separator1 {
   width: 70%;
   size: 1rem;
   border-width: 2px;
   border-color: white;
   border-radius: 5px;
 }
-.infoblock_separator2{
+.infoblock_separator2 {
   width: 50%;
   size: 1rem;
   border-width: 1px;
@@ -257,23 +255,98 @@ h1 {
   border-radius: 5px;
 }
 
-.infoblock_body{
+.infoblock_body {
   text-indent: 30px;
   text-align: justify;
   margin: 0 10%;
 }
 
-.infoblock_link-div{
+.infoblock_link-div {
   display: block;
   padding: 0 10% 1%;
   text-align: center;
 }
 
-.infoblock_link{
-  border: 2px outset white  
+.infoblock_link {
+  border: 2px outset white;
 }
 
-.infoblock_link:hover{
+.infoblock_link:hover {
   color: black;
   background-color: white;
+}
+
+.tabs__updating-list{
+  margin: 20px 30px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.updating-list {
+  width: 100%;
+
+  display: none;
+}
+
+.tabs__updating-list_head {
+  display: inline-block;
+  font-size: 2rem;
+  background-color: rgb(63, 63, 63);
+  color: white;
+  border-bottom-color: rgb(255, 102, 102);
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  font-family: "open sans", sans-serif;
+  font-size: 14px;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 13px 20px;
+  margin: 0 2px;
+  text-align: left;
+  border-radius: 30px 30px 0 0;
+}
+
+.tabs__updating-list_head:hover{
+  background-color: rgb(37, 37, 37);
+  color: white;
+  cursor: pointer;
+}
+
+.updating-list__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.updating-list__item {
+  border-bottom: 0.2rem solid black;
+  background: #dae5f4;
+  height: 50px;
+}
+
+.updating-list__item:hover,
+.updating-list__item:nth-child(odd):hover {
+  background: #448cf0;
+}
+
+.updating-list__item:nth-child(odd) {
+  background: #b8d1f3;
+}
+
+.updating-list__item_date {
+  display: inline-block;
+}
+
+.updating-list__item_preview {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+
+.updating-list__item_name {
+  display: inline-block;
 }

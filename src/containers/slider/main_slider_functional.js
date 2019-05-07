@@ -1,5 +1,5 @@
 
-let slideIndex = -1;
+let slideIndex = 0;
 
 export function plusDivs(n) {
 

@@ -12,13 +12,16 @@ class Slider extends React.Component {
         this.state = {
             plusDivs, showDivs,
             coroutine: () => {
-                this.state.plusDivs(1);
-                this.state.TimeoutCoroutine = setTimeout( this.state.coroutine, 5000);
+                this.state.TimeoutCoroutine = setTimeout( () => {
+                    this.state.plusDivs(1);
+                    this.state.coroutine()
+                }, 5000);
             }
         }
     }
 
     componentDidMount(){
+        this.state.plusDivs(0);
         this.state.coroutine();
     }
     
