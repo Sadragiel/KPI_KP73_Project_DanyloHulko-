@@ -302,7 +302,6 @@ h1 {
   font-family: "open sans", sans-serif;
   font-size: 14px;
   position: relative;
-  text-align: left;
   text-transform: uppercase;
   padding: 13px 20px;
   margin: 0 2px;
@@ -323,9 +322,12 @@ h1 {
 }
 
 .updating-list__item {
+  position: relative;
   border-bottom: 0.2rem solid black;
   background: #dae5f4;
-  height: 50px;
+  height: 60px;
+  width: 100%;
+  
 }
 
 .updating-list__item:hover,
@@ -337,16 +339,34 @@ h1 {
   background: #b8d1f3;
 }
 
+.updating-list__item_link{
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  
+
+}
+
 .updating-list__item_date {
-  display: inline-block;
+  display: block;
+  width: 100px;
+  padding: 10px;
+   text-align: center;
 }
 
 .updating-list__item_preview {
-  display: inline-block;
-  height: 100%;
-  width: auto;
+  display: block;
+  height: 60px;
+  width: 50px;
 }
 
 .updating-list__item_name {
-  display: inline-block;
+  display: block;
+
+  padding: 10px;
+  text-align: left;
+
 }
