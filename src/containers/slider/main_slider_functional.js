@@ -39,6 +39,7 @@ export function showDivs(n) {
         infoblocks[i].style.opacity = 0;  
         infoblocks[i].style.visibility = "hidden"; 
     }
+    if(slideIndex >= elements.length) return;
     elements[slideIndex].style.zIndex = 2;
 
     slides[slideIndex].style.position = "relative";  

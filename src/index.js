@@ -7,6 +7,8 @@ import { logger } from 'redux-logger';
 import reducer from './reducers';
 import App from './components/App';
 import About from './components/About';
+import Gallery from './components/Gallery';
+
 import rootSaga from './sagas';
 
 import createHistory from 'history/createBrowserHistory';
@@ -38,6 +40,7 @@ render(
         <Route path="/city:*" component={App} />
         <Route  path="/about" component={About} />
         <Route  path="/about" component={About} />
+        <Route path="/Gallery" component={Gallery} />
         <Route path="/*" component={() => <h1 style={{color:'red'}}>NOT FOUND!!!</h1>} />
       </Switch>
     </Router>
