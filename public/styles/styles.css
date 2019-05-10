@@ -502,3 +502,43 @@ h1 {
   background: #c2c1c1;
   font-size: 1rem;
 }
+
+.pagination{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+.pagination__element{
+  width: 50px;
+  height: 50px;
+  background: #b8d1f3;
+  color: black;
+  text-align: center;
+}
+
+.pagination__element:hover{
+  background: #448cf0;
+}
+
+.pagination__element_disabled,
+.pagination__element_disabled:hover{
+  background: none;
+}
+
+.pagination__element_active,
+.pagination__element_active:hover{
+  background: black;
+  color: white;
+}
+
+.pagination__element-content{
+  font-size: 2rem;
+}
+.pagination__wrapper{
+  position: relative;
+  width: 100%;
+}

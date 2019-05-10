@@ -7,9 +7,10 @@ class Pagination extends React.Component {
     super(props);
   }
   render() {
+    
     return (
-        <div className="pagination">
-            <ul>
+        <div className="pagination__wrapper">
+            <ul className="pagination">
                 {CreatePeginationElement(this.props.page, this.props.maxPage)}
             </ul>
         </div>
@@ -24,12 +25,11 @@ const mapStateToProps = (state) => (
         maxPage: state.reducer.maxPage
     }
 )
-const mapDispatchToProps = {};
 
 
 Pagination = connect(
   mapStateToProps,
-  mapDispatchToProps,
+  null,
 )(Pagination);
 
 

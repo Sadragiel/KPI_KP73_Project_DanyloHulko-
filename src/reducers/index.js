@@ -3,7 +3,14 @@ const reducer = (state = { page: 0, maxPage: 0, resultOfPagination: [], loadingG
     case 'GET_GALLERY':
       return { ...state, loadingGallery: true }
     case 'GALLERY_RECEIVED':
-      return { ...state, loadingGallery: false, gallery: action.galleryActionData }
+      return {
+        ...state,
+        loadingGallery: false,
+        resultOfPagination: action.galleryActionData.resultOfPagination,
+        page: action.galleryActionData.page,
+        maxPage: action.galleryActionData.maxPage,
+        
+      }
     case 'GALLERY_ERRORED':
       return { ...state, error: action.error }
     default:

@@ -6,9 +6,8 @@ import { connect } from 'react-redux';
 
 class Gallery extends React.Component {
   render() {
-    console.log('Gallery props', this.props)
     const items = []
-    for (let i = 1; i < this.props.galleryItems.length; i++) {
+    for (let i = 0; i < this.props.galleryItems.length; i++) {
       items.push(<GalleryItem key={i} imgSrc={this.props.galleryItems[i]} />)
     }
     return (

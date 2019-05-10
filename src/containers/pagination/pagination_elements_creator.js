@@ -12,7 +12,8 @@ const range = {
 
 
 export function CreatePeginationElement(currentPage, maxPage){
-    CreateElement("&#10094", currentPage > 1, currentPage - 1);
+    array = [];
+    CreateElement("<", currentPage > 1, currentPage - 1);
     for(let i = 1;
         i <= range.start && i < currentPage - range.before;
         i++){
@@ -27,7 +28,7 @@ export function CreatePeginationElement(currentPage, maxPage){
             const res = currentPage - i;
             CreateElement(res, res > 0, res);
         }
-    CreateElement(currentPage, true, currentPage, true);
+    CreateElement(currentPage, true, currentPage, true, true);
     for(let i = 1;
         i <= range.after && i + currentPage <= maxPage;
         i++){
@@ -45,13 +46,15 @@ export function CreatePeginationElement(currentPage, maxPage){
                 res > currentPage + range.after,
                 res);
         }
-        CreateElement("&#10095", currentPage < maxPage, currentPage + 1);
+        CreateElement(">", currentPage < maxPage, currentPage + 1);
+        return array;
 }
 
-function CreateElement( content, condition, reference , isDisabled = false){
+function CreateElement( content, condition, reference , isDisabled = false, isActive = false){
     if(condition)
         array.push(
             <PaginationElement 
+                isActive={isActive}
                 isDisabled={isDisabled}
                 reference={reference}
                 content={content}

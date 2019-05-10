@@ -14,8 +14,8 @@ let Gallery = ({getGalery}) => {
   return (
     <div>
         <Header />
-        <GalleryDiv />
         <Loading />
+        <GalleryDiv />
         <Pagination />
     </div>
   );

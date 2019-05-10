@@ -11,11 +11,11 @@ class PaginationElement extends React.Component {
     let classname = "pagination__element";
     if(this.props.isDisabled)
         classname += ' pagination__element_disabled';
-    if(this.props.content === this.props.reference)
+    if(this.props.isActive)
         classname += ' pagination__element_active';
     return (
         <li className={classname}
-            onClick={() => this.props.getGalery(this.props.reference)}
+            onClick={() => {if(!this.props.isActive)this.props.getGalery(this.props.reference)}}
         >
             <span className="pagination__element-content">
                 {this.props.content}

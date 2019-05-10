@@ -10,6 +10,7 @@ let padding_top = {
 }
 
 let About = () => {
+  
   return (
     <div>
         <Header />

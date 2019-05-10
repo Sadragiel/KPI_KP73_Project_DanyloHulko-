@@ -2,7 +2,6 @@ import { put, takeLatest, all } from 'redux-saga/effects';
 
 function* fetchGallery(actionObj) {
 
-    console.log('Saga was triggered. Page',actionObj.page )
     const url = `/api/v1/gallery?page=${actionObj.page}`;
 
     try{
