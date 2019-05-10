@@ -13,7 +13,7 @@ let Laoading = ({ loading }) => (
 );
 
 const mapStateToProps = (state) => ({
-  loading: state.reducer.loading
+  loading: state.reducer.loadingGallery
 })
 
 Laoading = connect(

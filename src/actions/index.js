@@ -3,11 +3,11 @@ export const getTemp = (name) => ({
   name
 });
 
-export const getCucold = (name) => {
-  console.log('CUCOLD');
+export const getGalery = (page) => {
+  console.log('Galery page', page);
   return ({
-  type: 'GET_CUCOLD',
-  name
+  type: 'GET_GALLERY',
+  page
 })};
 
 export const setCityName=(name)=>({

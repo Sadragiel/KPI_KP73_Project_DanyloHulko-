@@ -17,7 +17,6 @@ class UpdatingListItem extends React.Component {
        
             <li className="updating-list__item">
                 <Link to={this.props.link} className="updating-list__item_link">
-
                     <span className="updating-list__item_date">
                         {this.props.date}
                     </span>
@@ -25,8 +24,6 @@ class UpdatingListItem extends React.Component {
                     <span className="updating-list__item_name">
                         {this.props.name}
                     </span>
-     
-                  
                 </Link>
             </li>
         

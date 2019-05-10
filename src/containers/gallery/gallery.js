@@ -1,14 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import GalleryItem from './gallery_item'
+import Pagination from './../pagination/pagination'
+import { connect } from 'react-redux';
 
-  const items = []
-
-  for (let i = 1; i < 37; i++) {
-    items.push(<GalleryItem key={i} imgSrc={`/static/images/fate_chibi/${i}.jpg`} />)
-  }
 class Gallery extends React.Component {
   render() {
+    console.log('Gallery props', this.props)
+    const items = []
+    for (let i = 1; i < this.props.galleryItems.length; i++) {
+      items.push(<GalleryItem key={i} imgSrc={this.props.galleryItems[i]} />)
+    }
     return (
         <div className="gallery">
             <figure> 
@@ -20,7 +22,17 @@ class Gallery extends React.Component {
         </div>
     );
   }
-
 };
+
+const mapStateToProps = (state) => (
+  { 
+      galleryItems: state.reducer.resultOfPagination,
+  }
+)
+
+Gallery = connect(
+  mapStateToProps,
+  null,
+)(Gallery);
 
 export default Gallery;

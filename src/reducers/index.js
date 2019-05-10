@@ -1,17 +1,11 @@
-const reducer = (state = { cityName: 'London' }, action) => {
+const reducer = (state = { page: 0, maxPage: 0, resultOfPagination: [], loadingGallery: true }, action) => {
   switch (action.type) {
-    case 'GET_TEMP':
-      return { ...state, loading: true, callDone: true };
-    case 'TEMP_RECEIVED':
-      return { ...state, temp: action.json, loading: false }
-    case 'GET_CUCOLD':
-      return { ...state, loadingCucold: true }
-    case 'CUCOLD_RECEIVED':
-      return { ...state, cucold: action.cucoldActionData }
-    case 'CITY_NAME':
-      return { ...state, cityName: action.name ? action.name :"London" }
-    case 'GET_SLIDE_INDEX':
-      return { ...state, slideIndex: action.slideIndex ? action.slideIndex : 0 }
+    case 'GET_GALLERY':
+      return { ...state, loadingGallery: true }
+    case 'GALLERY_RECEIVED':
+      return { ...state, loadingGallery: false, gallery: action.galleryActionData }
+    case 'GALLERY_ERRORED':
+      return { ...state, error: action.error }
     default:
       return state;
   }
