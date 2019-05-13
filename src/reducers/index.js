@@ -1,7 +1,7 @@
 const reducer = (state = { page: 0, maxPage: 0, resultOfPagination: [], loadingGallery: true }, action) => {
   switch (action.type) {
     case 'GET_GALLERY':
-      return { ...state, loadingGallery: true }
+      return { ...state, resultOfPagination: [], loadingGallery: true }
     case 'GALLERY_RECEIVED':
       return {
         ...state,

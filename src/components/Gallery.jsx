@@ -9,17 +9,24 @@ import {getGalery} from './../actions/index'
 import MyBatton from './../containers/myBatton';
 
 
-let Gallery = ({getGalery}) => {
-  getGalery(1);
-  return (
-    <div>
-        <Header />
-        <Loading />
-        <GalleryDiv />
-        <Pagination />
-    </div>
-  );
-}
+
+class Gallery extends React.Component {
+  componentDidMount(){
+    this.props.getGalery(1);
+
+    
+
+  }
+  render() {
+    return (
+      <div className="transition-container">
+          <Loading />
+          <GalleryDiv />
+          <Pagination />
+      </div>
+    );
+  }
+};
 
 
 const mapDispatchToProps = {

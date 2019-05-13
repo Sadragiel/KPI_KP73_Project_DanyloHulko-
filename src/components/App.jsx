@@ -1,21 +1,24 @@
 import React from 'react';
-import Button from '../containers/Button';
-import Temperature from '../containers/Temperature'
-import Loading from '../containers/Loading';
-import InputCity from  '../containers/InputCity';
+import {Link} from 'react-router-dom'
+import Header from './Layout/Header'
+import Slider from './../containers/slider/main_slider'
+import UpdatingListTabs from './../containers/mainpage_updatinglist/udating_list_tabs.js';
 import {connect } from 'react-redux'
-import { Link } from 'react-router-dom';
+
+let padding_top = {
+  paddingTop: "30px"
+}
+
 
 let App = ({ callDone, id,getByUrl }) => {
   if(id && !callDone){getByUrl(id)}
   return (
-    <div>
-      <Link to="/about">About</Link>
-      <InputCity/>
-      <Button />
-      <Loading />
-      <Temperature name={id} />
-    </div>
+    <div className="transition-container">
+        <Slider style={{padding_top}} />
+          <div className="row">
+            <UpdatingListTabs />
+          </div>
+      </div>
   );
 }
 

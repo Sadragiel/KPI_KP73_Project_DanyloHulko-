@@ -8,6 +8,11 @@ import reducer from './reducers';
 import App from './components/App';
 import About from './components/About';
 import Gallery from './components/Gallery';
+import Article from './components/Article'
+
+//layout
+import Header from './components/Layout/Header'
+import Footer from './components/Layout/Footer'
 
 import rootSaga from './sagas';
 
@@ -35,14 +40,22 @@ render(
   <Provider store={store}>
   <BrowserRouter>
     <Router history={history}>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route path="/city:*" component={App} />
-        <Route  path="/about" component={About} />
-        <Route  path="/about" component={About} />
-        <Route path="/Gallery" component={Gallery} />
-        <Route path="/*" component={() => <h1 style={{color:'red'}}>NOT FOUND!!!</h1>} />
-      </Switch>
+      <div className="page-container">
+        <Header />  
+        <div className="content">
+          <Switch>
+            <Route exact path="/" component={App} />
+            <Route path="/city:*" component={App} />
+            <Route  path="/about" component={About} />
+            <Route path="/gallery" component={Gallery} />
+            <Route path="/article" component={Article} />
+            <Route path="/*" component={() => <h1 style={{color:'red'}}>NOT FOUND!!!</h1>} />
+          </Switch>
+        </div>
+        <Footer />
+      </div>
+        
+
     </Router>
   </BrowserRouter>
   </Provider>,

@@ -4,6 +4,7 @@ import MainSliderElement from './main_slider_element'
 
 import {plusDivs, showDivs, } from './main_slider_functional'
 
+import {withRouter} from 'react-router-dom';
 
 class Slider extends React.Component {
 
@@ -21,8 +22,12 @@ class Slider extends React.Component {
     }
 
     componentDidMount(){
-        this.state.plusDivs(0);
+        this.state.showDivs(0);
         this.state.coroutine();
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.state.TimeoutCoroutine);
     }
     
     render() {
@@ -72,4 +77,4 @@ class Slider extends React.Component {
  
 }
 
-export default Slider;
+export default withRouter(Slider);

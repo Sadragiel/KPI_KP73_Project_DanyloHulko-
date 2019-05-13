@@ -2,6 +2,7 @@ import React from 'react';
 import PaginationElement from './pagination_element'
 
 let array = [];
+let iterator = 0;
 
 const range = {
     start: 2,
@@ -13,6 +14,7 @@ const range = {
 
 export function CreatePeginationElement(currentPage, maxPage){
     array = [];
+    iterator = 0;
     CreateElement("<", currentPage > 1, currentPage - 1);
     for(let i = 1;
         i <= range.start && i < currentPage - range.before;
@@ -47,13 +49,16 @@ export function CreatePeginationElement(currentPage, maxPage){
                 res);
         }
         CreateElement(">", currentPage < maxPage, currentPage + 1);
+        window.scrollTo(0, 0)
         return array;
+
 }
 
 function CreateElement( content, condition, reference , isDisabled = false, isActive = false){
     if(condition)
         array.push(
             <PaginationElement 
+                key={iterator++}
                 isActive={isActive}
                 isDisabled={isDisabled}
                 reference={reference}

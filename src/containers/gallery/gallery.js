@@ -9,7 +9,9 @@ class Gallery extends React.Component {
     const items = []
     for (let i = 0; i < this.props.galleryItems.length; i++) {
       items.push(<GalleryItem key={i} imgSrc={this.props.galleryItems[i]} />)
-    }
+    } 
+    if(items.length === 0)
+      items.push(<span key={0}></span>)
     return (
         <div className="gallery">
             <figure> 

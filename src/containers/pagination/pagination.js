@@ -11,6 +11,7 @@ class Pagination extends React.Component {
     return (
         <div className="pagination__wrapper">
             <ul className="pagination">
+            
                 {CreatePeginationElement(this.props.page, this.props.maxPage)}
             </ul>
         </div>
