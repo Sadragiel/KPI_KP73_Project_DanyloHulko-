@@ -6,7 +6,7 @@ class GalleryElement extends React.Component {
     return (
         <li className="gallery__item">
             <span className="gallery__item_header">
-                Item Title
+                {this.props.name}
             </span>
             <Link to="#" className="gallery__item_link">
                 <img src={this.props.imgSrc} className="gallery__item_img" />

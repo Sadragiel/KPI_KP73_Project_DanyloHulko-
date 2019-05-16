@@ -1,23 +1,11 @@
-export const getTemp = (name) => ({
-  type: 'GET_TEMP',
-  name
-});
 
-export const getGalery = (page) => {
-  console.log('Galery page', page);
+export const getGalery = (page, key) => {
   return ({
   type: 'GET_GALLERY',
-  page
+  page, key
 })};
 
-export const setCityName=(name)=>({
-  type:'CITY_NAME',
-  name
+export const setGaleryKey=(key)=>({
+  type:'SET_GALLERY_KEY',
+  key
 }) 
-
-
-
-export const getSlideIndex = () => {
-  return ({
-  type: 'GET_SLIDE_INDEX',
-})};

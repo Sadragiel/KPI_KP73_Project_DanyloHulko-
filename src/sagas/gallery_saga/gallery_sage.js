@@ -2,7 +2,13 @@ import { put, takeLatest, all } from 'redux-saga/effects';
 
 function* fetchGallery(actionObj) {
 
-    const url = `/api/v1/gallery?page=${actionObj.page}`;
+
+    let url = `/api/v1/gallery?page=${actionObj.page}`;
+
+    if(actionObj.key){
+        url += `&key=${actionObj.key.replace(' ', '+')}`
+    }
+        
 
     try{
         const response = yield fetch(url).then(response => response.json(), );

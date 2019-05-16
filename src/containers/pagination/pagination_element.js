@@ -15,7 +15,7 @@ class PaginationElement extends React.Component {
         classname += ' pagination__element_active';
     return (
         <li className={classname}
-            onClick={() => {if(!this.props.isActive)this.props.getGalery(this.props.reference)}}
+            onClick={() => {if(!this.props.isActive)this.props.getGalery(this.props.reference, this.props.keyWord)}}
         >
             <span className="pagination__element-content">
                 {this.props.content}
@@ -31,7 +31,8 @@ const mapStateToProps = (state) => (
         resultOfPagination: state.reducer.resultOfPagination,
         page: state.reducer.page,
         perPage: state.reducer.perPage,
-        maxPage: state.reducer.maxPage
+        maxPage: state.reducer.maxPage,
+        keyWord: state.reducer.key
     }
 )
 const mapDispatchToProps = {
