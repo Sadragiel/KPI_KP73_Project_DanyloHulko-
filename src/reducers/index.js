@@ -1,4 +1,10 @@
-const reducer = (state = { page: 0, maxPage: 0, resultOfPagination: [], loadingGallery: true, key: '' }, action) => {
+const reducer = (state = { 
+  page: 0, 
+  maxPage: 0,
+   resultOfPagination: [],
+    loadingGallery: true,
+     key: ''
+      }, action) => {
   switch (action.type) {
     case 'GET_GALLERY':
       return { ...state, resultOfPagination: [], loadingGallery: true }
